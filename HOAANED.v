@@ -3,7 +3,7 @@
 module precise_adder(input1,input2,cin,answer,carry_out);
 	parameter UPL=10;
 	input [UPL-1:0] input1,input2;
-  input cin;
+  	input cin;
 	output [UPL-1:0] answer;
 	output  carry_out;
 	wire [UPL-1:0] carry;
@@ -12,7 +12,7 @@ module precise_adder(input1,input2,cin,answer,carry_out);
 	generate 
 		for(i=0;i<UPL;i=i+1) begin: generate_N_bit_Adder
 			if(i==0) 
-              full_adder f0(input1[0],input2[0],cin,answer[0],carry[0]);
+             			full_adder f0(input1[0],input2[0],cin,answer[0],carry[0]);
 			else
 				full_adder f(input1[i],input2[i],carry[i-1],answer[i],carry[i]);
 		end
@@ -21,13 +21,6 @@ module precise_adder(input1,input2,cin,answer,carry_out);
 	endgenerate
 	
 endmodule
-
-module half_adder(x,y,s,c);
-   input x,y;
-   output s,c;
-   assign s=x^y;
-   assign c=x&y;
-endmodule // half adder
 
 module full_adder(x,y,c_in,s,c_out);
    input x,y,c_in;
@@ -79,4 +72,4 @@ module HOAANED(A,B,result);
 	assign result[N] = carry_msb;
 	
 	
-endmodule : top
+endmodule : HOAANED
