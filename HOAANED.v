@@ -45,7 +45,7 @@ module imprecise_adder(A,B,result,carry);
 endmodule : imprecise_adder
 
 ///////////////////////////////////////////////////////////////////HOAANED
-module HOAANED(A,B,result);
+module top(A,B,result);
 	parameter N=16;
 	parameter LPL=6;
 	parameter UPL=10;
@@ -72,4 +72,4 @@ module HOAANED(A,B,result);
 	assign result[N] = carry_msb;
 	
 	
-endmodule : HOAANED
+endmodule : top
